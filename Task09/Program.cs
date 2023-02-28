@@ -16,7 +16,6 @@ Console.WriteLine($"Случайное число из отрезка 10 - 99 ->
 // Console.WriteLine (firstDigit > secondDigit ? firstDigit : secondDigit);
 
 int maxDigit = MaxDigit (number);
-
 Console.WriteLine($"Наибольшая цифра числа -> {maxDigit}");
 
 int MaxDigit(int num) //
