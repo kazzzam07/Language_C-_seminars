@@ -7,14 +7,15 @@
 Console.Write("Введите пятизначное число: ");
 int number = Convert.ToInt32(Console.ReadLine());
 
-if (number>9999&&number<100000) 
+if (number < 0) number *= -1;
+if (number > 9999 && number < 100000)
 {
-    if(number == ReversNumber(number)) Console.WriteLine ("Число является палиндромом");
-    else Console.WriteLine ("Число не является палиндромом");
+    if (number == ReversNumber(number)) Console.WriteLine("Число является палиндромом");
+    else Console.WriteLine("Число не является палиндромом");
 }
 else
 {
-  Console.WriteLine ("Число не пятизначное");  
+    Console.WriteLine("Число не пятизначное");
 }
 
 
@@ -27,6 +28,6 @@ int ReversNumber(int num)
         num /= 10;
     }
     return res;
-  }
+}
 
 // Console.WriteLine (ReversNumber(number));
