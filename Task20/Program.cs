@@ -15,6 +15,7 @@ Console.Write("X: ");
 int xPointB = Convert.ToInt32(Console.ReadLine());
 Console.Write("Y: ");
 int yPointB = Convert.ToInt32(Console.ReadLine());
+
 double distance = Distance(xPointA, yPointA, xPointB, yPointB);
 Console.WriteLine($"Расстояние между точками равно: {Math.Round(distance, 2, MidpointRounding.ToZero)}");
 
