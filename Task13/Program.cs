@@ -12,7 +12,7 @@ else
 {
     while (number >= 999)
     {
-        number = number / 10;
+        number /=  10;
     }
     int thirdDigit = ThirdDigit(number);
     Console.WriteLine($"Thirt digit -> {thirdDigit}");
