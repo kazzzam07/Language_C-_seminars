@@ -2,43 +2,30 @@
 // Посчитайте, сколько чисел больше 0 ввёл пользователь.
 // 0, 7, 8, -2, -2 -> 2
 // 1, -7, 567, 89, 223-> 3
- 
-void InputNumbers (int m)
+
+int[] CreateArrayIntUser(int size)
 {
-    for (int i = 0; i < m; i++)
+    int[] arr = new int[size];
+    Console.WriteLine($"Введите {size} чисел:");
+    for (int i = 0; i < size; i++)
     {
-        Console.Write($"Введите {i+1} число ");
-        arrayNumbers[i] = Convert.ToInt32(Console.ReadLine());
+        arr[i] = Convert.ToInt32(Console.ReadLine());
     }
+    return arr;
 }
 
-void PrintArray(int[] arr)
+int CountPositiveElements(int[] arr)
 {
-    Console.Write("[");
+    int countPositiveElements = 0;
     for (int i = 0; i < arr.Length; i++)
     {
-        if (i < arr.Length - 1) Console.Write($"{arr[i]},");
-        else Console.Write($"{arr[i]}");
+        if (arr[i] > 0) countPositiveElements++;
     }
-    Console.WriteLine("]");
+    return countPositiveElements;
 }
 
-int AmountPositiveNumbers (int [] arr)
-{
-    int count = 0;
-    for (int i = 0; i < arr.Length; i++)
-    {
-        if (arr[i] >= 0) count++;
-    }
-    return count;
-}
-
-Console.Write("Введиде количество чисел -> ");
-int m = Convert.ToInt32(Console.ReadLine());
-int[] arrayNumbers = new int[m];
-
-InputNumbers(m);
-Console.WriteLine();
-PrintArray(arrayNumbers);
-int amountPositiveNumbers = AmountPositiveNumbers(arrayNumbers);
-Console.Write($"Колличество положительных чисел -> {amountPositiveNumbers}");
+Console.Write("Введите количество чисел: ");
+int lenght = Convert.ToInt32(Console.ReadLine());
+int[] array = CreateArrayIntUser(lenght);
+int count = CountPositiveElements(array);
+Console.WriteLine($"Количество введенных положительных чисел: {count}");
