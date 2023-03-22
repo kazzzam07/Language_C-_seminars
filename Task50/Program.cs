@@ -34,22 +34,22 @@ void PrintMatrix(int[,] matrix)
     }
 }
 
-void OutputElement(int[,] matrix, int[] positionElem)
+void OutputElement(int[,] matrix, int pos1, int pos2)
 {
-    if (positionElem[i] >= 0 && positionElem[j] >= 0 &&
-    positionElem[i] <= matrix.GetLength(0) && positionElem[j] <= matrix.GetLength(1))
+
+    if (pos1 >= 0 && pos2 >= 0 &&
+    pos1 <= matrix.GetLength(0) && pos2 <= matrix.GetLength(1))
     {
-        int result = 
+         Console.Write($"Элемент с позициями {pos1},{pos2} -> {matrix[pos1, pos2]}");
     }
-    else Console.Write("Такого элемента в массиве нет")
+    else Console.Write("Такого элемента в массиве нет");
 
 }
 
-int[,] array2d = CreateMatrixRndInt(4, 4, -10, 10);
+int[,] array2d = CreateMatrixRndInt(5, 5, -10, 10);
 PrintMatrix(array2d);
-Console.Write("Веедите позиции элемента через запятую");
-string positionElement = Console.ReadLine();
-// positionElement = RemovingSpaces(positionElement);
-int[] position = ParserString(positionElement);
-
-
+Console.Write("Введите позицию строки -> ");
+int position1 = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите позицию столбца -> ");
+int position2 = Convert.ToInt32(Console.ReadLine());
+OutputElement(array2d, position1, position2);

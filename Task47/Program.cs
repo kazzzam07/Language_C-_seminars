@@ -34,5 +34,4 @@ void PrintMatrix(double[,] matrix)
 }
 
 double[,] array2d = CreateMatrixDoubleInt(3, 4, -10, 10);
-
 PrintMatrix(array2d);
